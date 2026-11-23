@@ -1,0 +1,104 @@
+/* Theme tokens + liquid-glass chrome surfaces */
+
+body.zroot-theme {
+  background: var(--zroot-bg, var(--chrome-bg));
+  color: var(--zroot-text, var(--chrome-text));
+  --chrome-bg: var(--zroot-bg, #0c0614);
+  --chrome-bg-2: var(--zroot-bg-elevated, rgba(36, 18, 48, 0.55));
+  --chrome-text: var(--zroot-text, #f5e9ff);
+  --chrome-accent: var(--zroot-accent, #c084fc);
+  --omnibox-bg: var(--omnibox-bg, rgba(255, 255, 255, 0.08));
+}
+
+/* Galactic atmosphere */
+body.zroot-theme[data-zroot-theme="liquid-glass"]::before,
+body.zroot-theme[data-zroot-theme="galaxy"]::before,
+body.zroot-theme[data-zroot-theme="nebula"]::before,
+body.zroot-theme[data-zroot-theme="aurora"]::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: calc(var(--zroot-starfield, 0) * 0.9);
+  background:
+    radial-gradient(ellipse 80% 50% at 10% -10%, color-mix(in srgb, var(--zroot-accent) 35%, transparent), transparent 60%),
+    radial-gradient(ellipse 60% 45% at 100% 0%, color-mix(in srgb, var(--zroot-accent-2, #f43f5e) 28%, transparent), transparent 55%),
+    radial-gradient(ellipse 50% 40% at 70% 100%, color-mix(in srgb, var(--zroot-accent-3, #a855f7) 22%, transparent), transparent 60%),
+    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.04) 0 1px, transparent 2px),
+    radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.05) 0 1px, transparent 2px);
+}
+
+body.zroot-theme.zroot-no-animations::before {
+  animation: none;
+}
+
+body.zroot-theme.zroot-has-custom-bg::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: var(--zroot-custom-bg);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.28;
+}
+
+/* Liquid glass panels */
+body.zroot-theme[data-zroot-theme="liquid-glass"] #sidebar,
+body.zroot-theme[data-zroot-theme="galaxy"] #sidebar,
+body.zroot-theme[data-zroot-theme="liquid-glass"] #navbar,
+body.zroot-theme[data-zroot-theme="galaxy"] #navbar {
+  background: color-mix(in srgb, var(--zroot-bg) 55%, transparent) !important;
+  backdrop-filter: blur(var(--zroot-blur, 24px)) saturate(1.4);
+  -webkit-backdrop-filter: blur(var(--zroot-blur, 24px)) saturate(1.4);
+  border-color: var(--chrome-border, rgba(255, 255, 255, 0.12));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), var(--zroot-glow, none);
+}
+
+body.zroot-theme #sidebar,
+body.zroot-theme #navbar,
+body.zroot-theme #main-content {
+  background: var(--zroot-bg, var(--chrome-bg)) !important;
+  color: var(--zroot-text, var(--chrome-text)) !important;
+}
+
+body.zroot-theme[data-zroot-theme="liquid-glass"] #main-content,
+body.zroot-theme[data-zroot-theme="galaxy"] #main-content {
+  background: transparent !important;
+}
+
+body.zroot-theme #sidebar .tab-item.active::before {
+  background: linear-gradient(180deg, var(--zroot-accent), var(--zroot-accent-2, var(--zroot-accent)));
+}
+
+body.zroot-theme #searchbar {
+  background: color-mix(in srgb, var(--zroot-bg-elevated, #241230) 80%, transparent);
+  backdrop-filter: blur(20px) saturate(1.3);
+  -webkit-backdrop-filter: blur(20px) saturate(1.3);
+  color: var(--zroot-text, var(--chrome-text));
+  border-bottom: 1px solid var(--chrome-border, rgba(255, 255, 255, 0.1));
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+body.zroot-theme #address-bar-display,
+body.zroot-theme #tab-editor {
+  background: var(--omnibox-bg, rgba(255, 255, 255, 0.08)) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+body.zroot-theme .workspace-row.active {
+  background: color-mix(in srgb, var(--ws-color, var(--zroot-accent, var(--chrome-accent))) 18%, transparent);
+}
+
+body.zroot-theme .workspace-row.active .workspace-row-index {
+  background: var(--ws-color, var(--zroot-accent, var(--chrome-accent)));
+  color: var(--zroot-bg, var(--chrome-bg));
+}
+
+body.zroot-theme #workspace-panel {
+  background: transparent !important;
+  border-bottom-color: var(--chrome-border, rgba(255, 255, 255, 0.1));
+}

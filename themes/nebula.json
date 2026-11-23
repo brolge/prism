@@ -1,0 +1,16 @@
+{
+  "id": "nebula",
+  "name": "Nebula",
+  "dark": true,
+  "variables": {
+    "--zroot-bg": "#16141c",
+    "--zroot-bg-elevated": "#221f2b",
+    "--zroot-accent": "#c58af9",
+    "--zroot-accent-2": "#e0b0ff",
+    "--zroot-accent-3": "#9b6dde",
+    "--zroot-text": "#eeeaf6",
+    "--zroot-glow": "none",
+    "--zroot-starfield": "0.35",
+    "--zroot-blur": "0px"
+  }
+}

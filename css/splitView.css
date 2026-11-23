@@ -1,0 +1,25 @@
+.split-divider {
+  position: fixed;
+  z-index: 5;
+  background: rgba(167, 139, 250, 0.35);
+  transition: background 0.15s ease;
+}
+
+.split-divider:hover,
+.split-divider:active {
+  background: rgba(167, 139, 250, 0.7);
+}
+
+.split-divider-v {
+  width: 4px;
+  cursor: col-resize;
+}
+
+.split-divider-h {
+  height: 4px;
+  cursor: row-resize;
+}
+
+body.split-active .tab-item.split-pane {
+  outline: 1px solid rgba(167, 139, 250, 0.5);
+}

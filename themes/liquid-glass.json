@@ -1,0 +1,20 @@
+{
+  "id": "liquid-glass",
+  "name": "Liquid Glass",
+  "dark": true,
+  "variables": {
+    "--zroot-bg": "#0c0614",
+    "--zroot-bg-elevated": "rgba(36, 18, 48, 0.55)",
+    "--zroot-accent": "#c084fc",
+    "--zroot-accent-2": "#f43f5e",
+    "--zroot-accent-3": "#a855f7",
+    "--zroot-text": "#f5e9ff",
+    "--zroot-glow": "0 0 40px rgba(192, 132, 252, 0.25)",
+    "--zroot-starfield": "0.85",
+    "--zroot-blur": "24px",
+    "--chrome-border": "rgba(255, 255, 255, 0.12)",
+    "--chrome-hover": "rgba(255, 255, 255, 0.08)",
+    "--chrome-active": "rgba(192, 132, 252, 0.22)",
+    "--omnibox-bg": "rgba(255, 255, 255, 0.08)"
+  }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' https: data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; base-uri 'none'"
+    />
+    <title>Prism Lookup</title>
+    <link rel="stylesheet" href="lookup.css" />
+  </head>
+  <body>
+    <div class="stars" aria-hidden="true"></div>
+
+    <header class="serp-top">
+      <a class="brand" href="../newtab/index.html" title="Prism home">
+        <img src="../../icons/icon256.png" alt="" />
+        <div class="brand-text">
+          <strong>Prism</strong>
+          <span>Lookup</span>
+        </div>
+      </a>
+      <form id="lookup-form" class="search" autocomplete="off" role="search">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" />
+          <path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+        <input id="q" type="search" name="q" placeholder="Search Prism…  try !yt, weather, define…" spellcheck="false" />
+        <button type="submit">Search</button>
+        <ul id="suggest" class="suggest" hidden role="listbox"></ul>
+      </form>
+    </header>
+
+    <main class="serp">
+      <div class="serp-meta">
+        <p id="status" class="status">Searching…</p>
+        <div class="engine-pill" title="Prism Lookup">
+          <img src="../../icons/icon256.png" alt="" />
+          <span>Prism Lookup</span>
+        </div>
+      </div>
+
+      <div id="intent-pill" class="intent-pill" hidden></div>
+      <section id="answer" class="answer" hidden></section>
+      <section id="insights" class="insights" hidden></section>
+      <section id="related" class="related" hidden></section>
+      <section id="results" class="results" aria-live="polite"></section>
+
+      <footer class="foot">
+        <div class="foot-brand">
+          <img src="../../icons/icon256.png" alt="" />
+          <span>Search by <strong>Prism</strong> · bangs: !yt !gh !reddit !wiki !maps</span>
+        </div>
+      </footer>
+    </main>
+
+    <script src="lookup.js"></script>
+  </body>
+</html>

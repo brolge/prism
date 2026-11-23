@@ -1,0 +1,51 @@
+/* Focus mode / fullscreen chrome hiding with edge reveal */
+
+body.chrome-hidden #sidebar {
+  width: 0;
+  padding-left: 0;
+  border-right-width: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+body.chrome-hidden #main-content {
+  margin-left: 0;
+}
+
+body.chrome-hidden #navbar {
+  height: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+body.chrome-hidden.sidebar-peek #sidebar {
+  width: var(--sidebar-width);
+  opacity: 1;
+  pointer-events: auto;
+  box-shadow: 8px 0 28px rgba(0, 0, 0, 0.45);
+}
+
+body.chrome-hidden.toolbar-peek #navbar {
+  height: calc(var(--toolbar-height, 36px) + var(--control-space-top)) !important;
+  padding-top: var(--control-space-top) !important;
+  padding-left: var(--control-space-left) !important;
+  padding-right: var(--control-space-right) !important;
+  opacity: 1;
+  pointer-events: auto;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+}
+
+body.chrome-hidden #windows-caption-buttons,
+body.chrome-hidden .windows-caption-buttons,
+body.chrome-hidden #linux-control-buttons {
+  opacity: 0;
+  pointer-events: none;
+}
+
+body.chrome-hidden.toolbar-peek .windows-caption-buttons,
+body.chrome-hidden.toolbar-peek #linux-control-buttons {
+  opacity: 1;
+  pointer-events: auto;
+}

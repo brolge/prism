@@ -1,0 +1,16 @@
+{
+  "id": "plain-dark",
+  "name": "Plain Dark",
+  "dark": true,
+  "variables": {
+    "--zroot-bg": "#202124",
+    "--zroot-bg-elevated": "#292a2d",
+    "--zroot-accent": "#8ab4f8",
+    "--zroot-accent-2": "#aecbfa",
+    "--zroot-accent-3": "#5f6368",
+    "--zroot-text": "#e8eaed",
+    "--zroot-glow": "none",
+    "--zroot-starfield": "0",
+    "--zroot-blur": "0px"
+  }
+}

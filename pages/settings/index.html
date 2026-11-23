@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'" />
+
+    <!-- title is set in JS -->
+
+    <link rel="stylesheet" href="../../css/base.css" />
+    <link rel="stylesheet" href="settings.css" />
+    <link rel="stylesheet" href="../../ext/icons/iconfont.css" />
+  </head>
+
+  <body>
+    <div class="chroma-settings">
+      <aside class="settings-nav" aria-label="Settings sections">
+        <div class="settings-nav-brand">
+          <img src="../../icons/icon256.png" alt="" />
+          <div>
+            <strong>Prism Settings</strong>
+            <span>Preferences &amp; privacy</span>
+          </div>
+        </div>
+        <button type="button" class="active" data-panel="panel-general">General</button>
+        <button type="button" data-panel="panel-appearance">Appearance</button>
+        <button type="button" data-panel="panel-privacy">Privacy</button>
+        <button type="button" data-panel="panel-passwords">Passwords &amp; Autofill</button>
+        <button type="button" data-panel="panel-search">Search</button>
+        <button type="button" data-panel="panel-gx">Prism Control</button>
+        <button type="button" data-panel="panel-advanced">Advanced</button>
+        <button type="button" data-panel="panel-about">About</button>
+      </aside>
+      <div class="settings-main">
+
+    <div class="settings-panel" id="panel-privacy">
+    <div class="settings-container" id="privacy-settings-container">
+      <h3 data-string="settingsPrivacyHeading"></h3>
+
+      <div class="settings-info-subheading" id="content-blocking-statistics">
+        <i class="i carbon:manage-protection"></i>
+        <span
+          data-string="settingsBlockedRequestCount"
+          data-allowHTML
+          id="content-blocking-blocked-requests"
+        >
+        </span>
+      </div>
+
+      <div class="setting-section" id="tracking-level-container">
+        <div class="setting-option">
+          <input type="radio" name="blockingLevel" id="blocking-allow-all" />
+          <label
+            for="blocking-allow-all"
+            data-string="settingsContentBlockingLevel0"
+          ></label>
+        </div>
+        <div class="setting-option">
+          <input type="radio" name="blockingLevel" id="blocking-third-party" />
+          <label
+            for="blocking-third-party"
+            data-string="settingsContentBlockingLevel1"
+          ></label>
+        </div>
+        <div class="setting-option">
+          <input type="radio" name="blockingLevel" id="blocking-block-all" />
+          <label
+            for="blocking-block-all"
+            data-string="settingsContentBlockingLevel2"
+          ></label>
+        </div>
+
+        <div id="content-blocking-information" hidden>
+          <div>
+            <label
+              for="content-blocking-exceptions"
+              data-string="settingsContentBlockingExceptions"
+            ></label>
+            <textarea
+              spellcheck="false"
+              id="content-blocking-exceptions"
+              rows="1"
+            ></textarea>
+          </div>
+          <a
+            id="customize-filters-link"
+            href="#"
+            data-string="settingsCustomizeFiltersLink"
+            hidden
+          ></a>
+        </div>
+      </div>
+
+      <div id="content-type-blocking"></div>
+    </div>
+    </div>
+
+    <div class="settings-panel" id="panel-appearance">
+    <div class="settings-container" id="appearance-settings-container">
+      <h3 data-string="settingsAppearanceHeading"></h3>
+
+      <label
+        for="dark-mode-container"
+        data-string="settingsEnableDarkMode"
+      ></label>
+      <div class="setting-section" id="dark-mode-container">
+        <div class="setting-option">
+          <input type="radio" name="darkMode" id="dark-mode-never" />
+          <label
+            for="dark-mode-never"
+            data-string="settingsDarkModeNever"
+          ></label>
+        </div>
+        <div class="setting-option">
+          <input type="radio" name="darkMode" id="dark-mode-night" />
+          <label
+            for="dark-mode-night"
+            data-string="settingsDarkModeNight"
+          ></label>
+        </div>
+        <div class="setting-option">
+          <input type="radio" name="darkMode" id="dark-mode-always" />
+          <label
+            for="dark-mode-always"
+            data-string="settingsDarkModeAlways"
+          ></label>
+        </div>
+        <div class="setting-option">
+          <input type="radio" name="darkMode" id="dark-mode-system" />
+          <label
+            for="dark-mode-system"
+            data-string="settingsDarkModeSystem"
+          ></label>
+        </div>
+      </div>
+
+      <div class="setting-section">
+        <input type="checkbox" id="checkbox-site-theme" />
+        <label
+          for="checkbox-site-theme"
+          data-string="settingsSiteThemeToggle"
+        ></label>
+      </div>
+
+      <div class="setting-section">
+        <input type="checkbox" id="checkbox-show-divider" />
+        <label
+          for="checkbox-show-divider"
+          data-string="settingsShowDividerToggle"
+        ></label>
+      </div>
+
+      <div class="setting-section">
+        <label for="setting-language-picker" data-string="settingsLanguageSelection"></label>
+        <select id="setting-language-picker"></select>
+      </div>
+
+      <div class="setting-section">
+        <label for="zroot-theme-preset">Theme preset</label>
+        <select id="zroot-theme-preset">
+          <option value="liquid-glass">Liquid Glass</option>
+          <option value="galaxy">Galaxy</option>
+          <option value="nebula">Nebula</option>
+          <option value="aurora">Aurora</option>
+          <option value="plain-dark">Plain Dark</option>
+          <option value="light">Light</option>
+        </select>
+      </div>
+
+      <div class="setting-section">
+        <label for="zroot-accent-color">Accent colour</label>
+        <input type="color" id="zroot-accent-color" value="#a78bfa" />
+      </div>
+
+      <div class="setting-section">
+        <label for="zroot-bg-image">Custom background image</label>
+        <input type="file" id="zroot-bg-image" accept="image/*" />
+        <button type="button" id="zroot-bg-image-clear">Clear</button>
+      </div>
+
+      <div class="setting-section">
+        <input type="checkbox" id="checkbox-animations" checked />
+        <label for="checkbox-animations">Enable animations</label>
+      </div>
+
+      <div class="setting-section">
+        <label for="zroot-sidebar-width">Sidebar width (<span id="zroot-sidebar-width-value">220</span>px)</label>
+        <input type="range" id="zroot-sidebar-width" min="160" max="360" step="10" value="220" />
+      </div>
+
+      <div class="setting-section">
+        <input type="checkbox" id="checkbox-sidebar-compact" />
+        <label for="checkbox-sidebar-compact">Compact sidebar</label>
+      </div>
+
+      <div class="setting-section">
+        <label for="zroot-custom-css">Custom CSS</label>
+        <textarea id="zroot-custom-css" rows="6" spellcheck="false" placeholder="/* live-applied CSS */"></textarea>
+      </div>
+    </div>
+    </div>
+
+    <div class="settings-panel" id="panel-about">
+    <div class="settings-container" id="about-settings-container">
+      <h3>About Prism</h3>
+      <div class="setting-section">
+        <div>Version: <strong id="zroot-about-version"></strong></div>
+        <p>© Prism. Licensed under Apache-2.0. See LICENSE.txt for the full licence.</p>
+        <button type="button" id="zroot-check-updates">Check for updates</button>
+        <button type="button" id="zroot-install-update" hidden>Install update &amp; restart</button>
+        <div id="zroot-update-status" style="margin-top:0.5rem;opacity:0.8"></div>
+      </div>
+      <div class="setting-section">
+        <input type="checkbox" id="checkbox-auto-updates" checked />
+        <label for="checkbox-auto-updates">Automatically download updates</label>
+      </div>
+      <div class="setting-section">
+        <label for="prism-update-feed">Custom update feed URL (optional)</label>
+        <input type="url" id="prism-update-feed" spellcheck="false" placeholder="Leave blank to use GitHub Releases" style="width:100%;box-sizing:border-box" />
+        <p class="settings-info-subheading">Advanced: point Prism at your own update server. Empty = GitHub Releases (brolge/prism).</p>
+      </div>
+    </div>
+    </div>
+
+    <div class="settings-panel active" id="panel-general">
+    <div class="settings-container" id="additional-settings-container">
+      <h3>General</h3>
+      <p class="settings-info-subheading">Startup behaviour, tabs, and everyday browser options.</p>
+
+      <div class="setting-section">
+        <label for="startupOptions" data-string="settingsStartupOptions"></label>
+        <select id="startup-options" name="startupOptions">
+          <option value="1" data-string="settingsStartupCreateTask"></option>
+          <option 
+          value="2" data-string="settingsStartupNewTaskandBackground"></option>
+          <option value="3"
+          data-string="settingsStartupNewTaskOnly"></option>
+        </select>
+      </div>
+
+      <div class="setting-section">
+        <label for="newWindowOptions" data-string="settingsNewWindowOptions"></label>
+        <select id="new-window-options" name="newWindowOptions">
+          <option value="1" data-string="settingsNewWindowCreateTask"></option>
+          <option 
+          value="2" data-string="settingsNewWindowPickTask"></option>
+        </select>
+      </div>
+
+      <div class="setting-section">
+        <input type="checkbox" id="checkbox-userscripts" />
+        <label
+          for="checkbox-userscripts"
+          data-string="settingsUserscriptsToggle"
+        ></label>
+        <div
+          class="settings-info-subheading setting-secondary-label"
+          data-string="settingsUserscriptsExplanation"
+          data-allowHTML
+        ></div>
+        <div class="setting-secondary-label" id="userscripts-show-directory" hidden>
+          <a data-string="settingsUserscriptShowDirectory"></a>
+        </div>
+      </div>
+
+      <div class="setting-section" id="section-separate-titlebar">
+        <input type="checkbox" id="checkbox-separate-titlebar" />
+        <label
+          for="checkbox-separate-titlebar"
+          data-string="settingsSeparateTitlebarToggle"
+        ></label>
+      </div>
+
+      <div class="setting-section" id="section-open-tabs-in-foreground">
+        <input type="checkbox" id="checkbox-open-tabs-in-foreground" />
+        <label
+          for="checkbox-open-tabs-in-foreground"
+          data-string="settingsOpenTabsInForegroundToggle"
+        ></label>
+      </div>
+
+      <div class="setting-section" id="section-user-agent">
+        <input type="checkbox" id="checkbox-user-agent" />
+        <label
+          for="checkbox-user-agent"
+          data-string="settingsUserAgentToggle"
+        ></label>
+        <input
+          type="text"
+          id="input-user-agent"
+          maxlength="200"
+        />
+      </div>
+
+		<div class="setting-section">
+			<input type="checkbox" id="checkbox-enable-autoplay">
+			<label for="checkbox-enable-autoplay" data-string="settingsAutoplayToggle"></label>
+		</div>
+
+      <div class="setting-section">
+        <input type="checkbox" id="checkbox-update-notifications" />
+        <label
+          for="checkbox-update-notifications"
+          data-string="settingsUpdateNotificationsToggle"
+        ></label>
+      </div>
+      <div class="setting-section">
+        <input type="checkbox" id="checkbox-usage-statistics" />
+        <label
+          for="checkbox-usage-statistics"
+          data-string="settingsUsageStatisticsToggle"
+          data-allowHTML
+        ></label>
+      </div>
+    </div>
+    </div>
+
+    <div class="settings-panel" id="panel-search">
+    <div class="settings-container" id="search-engine-settings-container">
+      <h3>Prism Lookup &amp; Search</h3>
+      <p class="settings-info-subheading">Prism Lookup is the built-in search engine. You can still pick Google, DuckDuckGo, or others below.</p>
+
+      <div class="setting-section">
+        <label
+          for="defaultSearchEngine"
+          data-string="settingsDefaultSearchEngine"
+        ></label>
+        <select id="default-search-engine" name="defaultSearchEngine"></select>
+        <input
+          id="custom-search-engine"
+          hidden
+        />
+
+        <div
+          class="settings-info-subheading"
+          data-string="settingsDDGExplanation"
+        ></div>
+      </div>
+    </div>
+    </div>
+
+    <div class="settings-panel" id="panel-passwords">
+    <div class="settings-container" id="password-autofill-container">
+      <h3>Passwords &amp; Autofill</h3>
+      <p class="settings-info-subheading">Save logins securely, autofill forms, and manage credentials. Use the built-in vault or connect Bitwarden / 1Password.</p>
+      <div class="card-grid">
+        <div class="feature-card"><strong>Autofill</strong><span>Fills usernames and passwords on sites you trust.</span></div>
+        <div class="feature-card"><strong>Save prompts</strong><span>Offer to save new passwords after you sign in.</span></div>
+        <div class="feature-card"><strong>Vault</strong><span>View, reveal, import, or export saved logins.</span></div>
+      </div>
+
+      <div class="setting-section">
+        <label
+          for="selectedPasswordManagers"
+          data-string="settingsSelectPasswordManager"
+        ></label>
+        <select
+          id="selected-password-manager"
+          name="selectedPasswordManager"
+        ></select>
+      </div>
+
+      <div class="setting-section" id="keychain-view-link" hidden>
+        <a data-string="keychainViewPasswords"></a>
+      </div>
+      <div class="setting-section">
+        <p class="settings-info-subheading">Tip: choose <strong>Built-in password manager</strong>, then open “View saved passwords” to manage your vault.</p>
+      </div>
+    </div>
+    </div>
+
+    <div class="settings-panel" id="panel-gx">
+    <div class="settings-container" id="prism-gx-settings-container">
+      <h3>Prism Control</h3>
+      <p class="settings-info-subheading">Opera GX–style tools. Open anytime with the <strong>GX</strong> button in the toolbar or <strong>Ctrl+Shift+G</strong>.</p>
+      <div class="card-grid">
+        <div class="feature-card"><strong>Resource Guard</strong><span>CPU/RAM meters and soft RAM throttle.</span></div>
+        <div class="feature-card"><strong>Force Dark</strong><span>Darken websites that ignore dark mode.</span></div>
+        <div class="feature-card"><strong>Sound Control</strong><span>Mute others, mute all, find noisy tabs.</span></div>
+        <div class="feature-card"><strong>Battery Saver</strong><span>Throttle background tabs and mute them.</span></div>
+        <div class="feature-card"><strong>Screenshot</strong><span>Capture the visible page quickly.</span></div>
+        <div class="feature-card"><strong>Lucid Mode</strong><span>Boost video/image contrast &amp; colour.</span></div>
+        <div class="feature-card"><strong>Quick Apps</strong><span>Discord, Twitch, Spotify, and more in the sidebar.</span></div>
+        <div class="feature-card"><strong>Prism Cleaner</strong><span>Clear cache without wiping passwords.</span></div>
+        <div class="feature-card"><strong>Snappy Mode</strong><span>Kill animations for max responsiveness.</span></div>
+        <div class="feature-card"><strong>Network Quiet</strong><span>Soft bandwidth cap while you game.</span></div>
+      </div>
+    </div>
+    </div>
+
+    <div class="settings-panel" id="panel-advanced">
+    <div class="settings-container" id="proxy-settings-container">
+      <h3 data-string="settingsProxyHeading"></h3>
+
+      <div class="setting-section" id="proxy-type-container">
+        <select id="selected-proxy-type">
+          <option data-string="settingsNoProxy"></option>
+          <option data-string="settingsManualProxy"></option>
+          <option data-string="settingsAutomaticProxy"></option>
+        </select>
+      </div>
+
+      <div class="setting-section" id="manual-proxy-section">
+        <div class="setting-option">
+          <label
+            for="proxy-rules-input"
+            data-string="settingsProxyRules"
+          ></label>
+          <input
+            id="proxy-rules-input"
+            type="text"
+            name="proxyRules"
+            placeholder="proxy.example.com:8080"
+          />
+        </div>
+
+        <div class="setting-option">
+          <label
+            for="proxy-bypass-rules-input"
+            data-string="settingsProxyBypassRules"
+          ></label>
+          <input
+            name="proxyBypassRules"
+            id="proxy-bypass-rules-input"
+            placeholder="localhost, 127.0.0.1/8, ::1"
+          />
+        </div>
+      </div>
+
+      <div class="setting-option" id="pac-option">
+        <label
+          for="pac-url-input"
+          data-string="settingsProxyConfigurationURL"
+        ></label>
+        <input
+          type="text"
+          id="pac-url-input"
+          placeholder="https://example.com/proxy.pac"
+        />
+      </div>
+    </div>
+
+    <div class="settings-container" id="keymap-settings-container">
+      <h3 data-string="settingsKeyboardShortcutsHeading"></h3>
+      <div
+        class="settings-info-subheading"
+        data-string="settingsKeyboardShortcutsHelp"
+      ></div>
+
+      <div class="setting-section">
+        <ul id="key-map-list"></ul>
+      </div>
+    </div>
+    <div class="settings-container" id="custom-bangs-container">
+      <h3 data-string="settingsCustomBangs"></h3>
+      <div class="setting-section">
+        <ul id="custom-bangs"></ul>
+        <button
+          data-string="settingsCustomBangsAdd"
+          id="add-custom-bang"
+        ></button>
+      </div>
+    </div>
+    </div>
+
+    </div><!-- .settings-main -->
+    </div><!-- .chroma-settings -->
+
+    <!-- this needs to be placed at the bottom so that sticky positioning works correctly -->
+    <div
+      class="banner yellow-background"
+      id="restart-required-banner"
+      role="alert"
+      hidden
+    >
+      <div class="container">
+        <i class="i carbon:information"></i>
+        <span data-string="settingsRestartRequired"></span>
+      </div>
+    </div>
+
+    <script src="../../js/util/keyMap.js"></script>
+    <script src="../../js/util/settings/settingsContent.js"></script>
+    <script src="../../js/util/searchEngine.js"></script>
+    <script src="../../js/util/theme.js"></script>
+    <script src="../../js/util/passwordManager.js"></script>
+    <script src="../../dist/localization.build.js"></script>
+    <script src="settings.js"></script>
+    <script src="settingsNav.js"></script>
+  </body>
+</html>

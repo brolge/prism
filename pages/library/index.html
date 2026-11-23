@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https: data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; base-uri 'none'" />
+    <title>Prism Library</title>
+    <link rel="stylesheet" href="library.css" />
+  </head>
+  <body>
+    <div class="stars" aria-hidden="true"></div>
+    <header class="top">
+      <a class="brand" href="../newtab/index.html">
+        <img src="../../icons/icon256.png" alt="" />
+        <strong>Prism</strong>
+      </a>
+      <nav class="tabs" role="tablist">
+        <button type="button" class="tab active" data-view="bookmarks">Bookmarks</button>
+        <button type="button" class="tab" data-view="favorites">Favorites</button>
+      </nav>
+      <input id="filter" type="search" placeholder="Filter…" spellcheck="false" />
+    </header>
+    <main>
+      <p id="hint" class="hint">Permanent shelf — this collection can’t be deleted. Star pages from the address bar to add bookmarks; mark favorites here or with the heart.</p>
+      <div id="list" class="list"></div>
+      <p id="empty" class="empty" hidden>Nothing here yet. Open a page and click the star in the address bar.</p>
+    </main>
+    <script src="../../js/util/settings/settingsContent.js"></script>
+    <script src="library.js"></script>
+  </body>
+</html>

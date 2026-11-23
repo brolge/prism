@@ -1,0 +1,37 @@
+#zroot-update-banner {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 0.92);
+  color: #e2e8f0;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35), 0 0 16px rgba(167, 139, 250, 0.25);
+  backdrop-filter: blur(12px);
+  font-size: 0.9rem;
+}
+
+#zroot-update-banner[hidden] {
+  display: none !important;
+}
+
+#zroot-update-banner button {
+  border: none;
+  background: #a78bfa;
+  color: #0f172a;
+  border-radius: 6px;
+  padding: 0.3rem 0.65rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#zroot-update-banner #zroot-update-dismiss {
+  background: transparent;
+  color: inherit;
+  padding: 0.2rem;
+  opacity: 0.7;
+}

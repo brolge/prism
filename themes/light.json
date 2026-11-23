@@ -1,0 +1,16 @@
+{
+  "id": "light",
+  "name": "Light",
+  "dark": false,
+  "variables": {
+    "--zroot-bg": "#f1f3f4",
+    "--zroot-bg-elevated": "#ffffff",
+    "--zroot-accent": "#1a73e8",
+    "--zroot-accent-2": "#8ab4f8",
+    "--zroot-accent-3": "#5f6368",
+    "--zroot-text": "#202124",
+    "--zroot-glow": "none",
+    "--zroot-starfield": "0",
+    "--zroot-blur": "0px"
+  }
+}

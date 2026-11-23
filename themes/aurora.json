@@ -1,0 +1,16 @@
+{
+  "id": "aurora",
+  "name": "Aurora",
+  "dark": true,
+  "variables": {
+    "--zroot-bg": "#121a18",
+    "--zroot-bg-elevated": "#1b2623",
+    "--zroot-accent": "#5eead4",
+    "--zroot-accent-2": "#99f6e4",
+    "--zroot-accent-3": "#2dd4bf",
+    "--zroot-text": "#e7f5f1",
+    "--zroot-glow": "none",
+    "--zroot-starfield": "0.3",
+    "--zroot-blur": "0px"
+  }
+}
