@@ -118,6 +118,7 @@
     "npmRebuild": false,
     "win": {
       "icon": "icons/icon256.ico",
+      "signAndEditExecutable": false,
       "target": [
         {
           "target": "nsis",
